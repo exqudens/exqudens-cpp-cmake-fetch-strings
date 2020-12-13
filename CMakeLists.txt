@@ -13,11 +13,17 @@ if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     endif()
 endif()
 
+include(ExternalProject)
+ExternalProject_Add(
+        project_exqudens_strings
+        URL file://C:/Users/Video/work/tmp/exqudens_strings-1.0.0/master.zip
+)
+
 set(CMAKE_CXX_STANDARD 20)
 
-find_package(exqudens_strings 1.0.0 REQUIRED)
+find_package(exqudens_strings 1.0.0)
 
-message(STATUS "exqudens_strings_VERSION: '${exqudens_strings_VERSION}'")
+#message(STATUS "exqudens_strings_VERSION: '${exqudens_strings_VERSION}'")
 
 include_directories("${CMAKE_PREFIX_PATH}/exqudens_strings-${exqudens_strings_VERSION}/include")
 
