@@ -28,13 +28,13 @@ get_target_property(
         exqudens-cpp-cmake-strings::exqudens-cpp-cmake-strings
         INTERFACE_INCLUDE_DIRECTORIES
 )
-message(STATUS "aaa: ${VAR_1}")
+message(STATUS "exqudens-cpp-cmake-strings::exqudens-cpp-cmake-strings INTERFACE_INCLUDE_DIRECTORIES: ${VAR_1}")
 
 enable_testing()
 add_executable(${PROJECT_NAME}_tests_1 src/test/cpp/tests_1.cpp)
 target_link_libraries(${PROJECT_NAME}_tests_1
     PRIVATE
-        exqudens-cpp-cmake-strings
+        exqudens-cpp-cmake-strings::exqudens-cpp-cmake-strings
 )
 target_include_directories(${PROJECT_NAME}_tests_1
     PRIVATE
